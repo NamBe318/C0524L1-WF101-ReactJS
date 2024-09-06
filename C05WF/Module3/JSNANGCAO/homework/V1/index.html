@@ -22,6 +22,10 @@
     <h1>Bài 4</h1>
     <p id="result4"></p>
     <button onclick=calMax()>Giá trị lớn nhất</button>
+
+    <h1>Bài 5</h1>
+    <p id="result5"></p>
+    <button onclick=calAvg()>tính trung bình</button>
 </body>
 <script>
     function sumArray(arr) {
@@ -86,5 +90,22 @@
         const final = maxInArray(num);
         document.getElementById("result4").textContent = 'Giá trị lớn nhất là ' + final;
     }
+
+    // bài 4 end 
+
+    function avgArray(arr) {
+        let average = 0;
+        for (let i = 0; i < arr.length; i++) {
+            average += arr[i];
+        }
+        return average / arr.length;
+    }
+    function calAvg() {
+        const num = [1, 2, 3, 4, 5];
+        const final = avgArray(num);
+        document.getElementById("result5").textContent = 'trung bình các giá trị là: ' + final;
+    }
+
+    // bài 5 end
 </script>
 </html>
