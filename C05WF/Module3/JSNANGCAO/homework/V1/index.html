@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bài 1</h1>
+    <p id="result1"></p>
+    <button onclick=calSum()>Tính tổng</button>
+
+    <h1>Bài 2</h1>
+    <p id="result2"></p>
+    <button onclick=calSquare()>Tính tích</button>
+
+    <h1>Bài 3</h1>
+    <p id="result3"></p>
+    <button onclick=calFGT()>Tính lọc</button>
+
+    <h1>Bài 4</h1>
+    <p id="result4"></p>
+    <button onclick=calMax()>Giá trị lớn nhất</button>
+</body>
+<script>
+    function sumArray(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        return sum;
+    }
+    function calSum() {
+    const num = [1, 2, 3, 4, 5];
+    const total = sumArray(num);
+    document.getElementById("result1").textContent = 'Tổng các phần tử trong mảng là: ' + total;
+    }
+
+    // bài 1 end
+
+    function squareArray(arr) {
+        let square = [];
+        for (let i = 0; i < arr.length; i++) {
+            square.push(arr[i] * arr[i]);
+        }
+        return square;
+    }
+    function calSquare() {
+        const num = [1, 2, 3, 4, 5];
+        const total = squareArray(num);
+        document.getElementById("result2").textContent = 'bình phương các phần tử trong mảng ' + total;
+    }
+
+    // bài 2 end
+
+    function filterGreaterThan(arr, value) {
+        let FGT = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > value) {
+                FGT.push(arr[i]);
+            }
+        }
+        return FGT;
+    }
+    function calFGT() {
+        const num = [1, 2, 3, 4, 5];
+        const compare = 1.2;
+        const filtered = filterGreaterThan(num, compare);
+        document.getElementById("result3").textContent = 'mảng mới được tạo là ' + filtered;
+    }
+
+    // bài 3 end
+
+    function maxInArray(arr) {
+        let max = arr[0];
+        for (let i = 0; i  < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    function calMax() {
+        const num = [1, 2, 3, 4, 5];
+        const final = maxInArray(num);
+        document.getElementById("result4").textContent = 'Giá trị lớn nhất là ' + final;
+    }
+</script>
+</html>
